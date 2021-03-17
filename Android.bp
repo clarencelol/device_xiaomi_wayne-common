@@ -1,6 +1,2 @@
-subdirs = [
-    "*"
-]
 soong_namespace {
-    imports: ["hardware/qcom/bootctrl"],
 }

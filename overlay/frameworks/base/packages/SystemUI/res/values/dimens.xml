@@ -16,7 +16,6 @@
 */
 -->
 <resources>
-
     <!-- for 20dp of padding at 2.75px/dp at default density -->
     <dimen name="rounded_corner_content_padding">8dp</dimen>
 

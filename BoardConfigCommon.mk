@@ -1,5 +1,6 @@
 #
-# Copyright (C) 2018 The Xiaomi-SDM660 Project
+# Copyright (C) 2018 The LineageOS Project
+# Copyright (C) 2018-2021 Xioami-SDM660 Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,6 +13,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
 #
 # This file sets variables that control the way modules are built
@@ -21,10 +23,10 @@
 # definition file).
 #
 
+# Inherit from sdm660-common
 include device/xiaomi/sdm660-common/BoardConfigCommon.mk
 
-# Device Path
-DEVICE_PATH := device/xiaomi/jasmine_sprout
+WAYNE_PATH := device/xiaomi/wayne-common
 
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
@@ -32,18 +34,14 @@ TARGET_HW_DISK_ENCRYPTION := true
 # DT2W
 TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
 
-# Kernel
-TARGET_KERNEL_SOURCE := kernel/xiaomi/sdm660
-TARGET_KERNEL_CONFIG := wayne_defconfig
-
-# Manifest
-DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
-
-# Platform
-BOARD_VENDOR_PLATFORM := xiaomi-sdm660
-
-# Screen density
+# Display
 TARGET_SCREEN_DENSITY := 420
+
+# HIDL
+DEVICE_MANIFEST_FILE += $(WAYNE_PATH)/manifest.xml
+
+# Kernel
+TARGET_KERNEL_CONFIG := wayne_defconfig
 
 # Vendor Security patch level
 VENDOR_SECURITY_PATCH := 2020-08-05
@@ -51,7 +49,5 @@ VENDOR_SECURITY_PATCH := 2020-08-05
 # WLAN MAC
 WLAN_MAC_SYMLINK := true
 
-# TWRP Support
-ifeq ($(BUILD_TWRP),true)
--include recovery/twrp/xiaomi/jasmine_sprout/twrp.mk
-endif
+# Inherit the proprietary files
+include vendor/xiaomi/wayne-common/BoardConfigVendor.mk

@@ -1,5 +1,6 @@
 #
-# Copyright (C) 2018 The Xiaomi-SDM660 Project
+# Copyright (C) 2018 The LineageOS Project
+# Copyright (C) 2018-2021 The Xiaomi-SDM660 Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,7 +13,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
+#
 #
 # This file sets variables that control the way modules are built
 # thorughout the system. It should not be used to conditionally
@@ -21,21 +22,16 @@
 # definition file).
 #
 
-# Inherit the fusion-common definitions
-$(call inherit-product, device/xiaomi/sdm660-common/sdm660.mk)
-
 # Device Path
-DEVICE_PATH := device/xiaomi/jasmine_sprout
-
-# A/B
-ENABLE_AB := true
+DEVICE_PATH := device/xiaomi/wayne-common
 
 # APEX
 ENABLE_APEX := true
 
+
 # Audio
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/audio/audio_platform_info_intcodec.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info_intcodec.xml \
+    $(DEVICE_PATH)/configs/audio/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info_intcodec.xml \
     $(DEVICE_PATH)/configs/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml
 
 # Boot animation
@@ -47,12 +43,25 @@ PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl \
     android.hardware.ir@1.0-service
 
-# Device properties
-$(call inherit-product, $(DEVICE_PATH)/device_prop.mk)
+# Device identifier
+PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
+# EAS POWERHINT VARIANT
+EAS_POWERHINT_VARIANT := sdm660
 
 # HW crypto
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.cryptfshw@1.0-service-qti.qsee
+
+# Inherit from sdm660-common
+$(call inherit-product, device/xiaomi/sdm660-common/sdm660.mk)
+
+# Inherit properties
+$(call inherit-product, $(DEVICE_PATH)/properties.mk)
+
+# Init
+PRODUCT_PACKAGES += \
+    init.device.rc
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -60,16 +69,13 @@ PRODUCT_COPY_FILES += \
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(DEVICE_PATH)/overlay
+    $(DEVICE_PATH)/overlay \
+    $(DEVICE_PATH)/overlay-lineage
 
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
     frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml
-
-# Ramdisk
-PRODUCT_PACKAGES += \
-    init.device.rc
 
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
@@ -91,21 +97,5 @@ PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl \
     android.hardware.vibrator@1.0-service
 
-# Watermark
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/media/MIUI_DualCamera_watermark_A2.png:$(TARGET_COPY_OUT_VENDOR)/etc/MIUI_DualCamera_watermark.png
-
-# Verity
-PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/platform/soc/c0c4000.sdhci/by-name/system
-PRODUCT_VENDOR_VERITY_PARTITION := /dev/block/platform/soc/c0c4000.sdhci/by-name/vendor
-$(call inherit-product, build/target/product/verity.mk)
-
-# Vendor files
+# Inherit the proprietary vendor files
 $(call inherit-product, vendor/xiaomi/wayne-common/wayne-common-vendor.mk)
-
-# DEVICE
-PRODUCT_NAME := awaken_jasmine_sprout
-PRODUCT_DEVICE := jasmine_sprout
-PRODUCT_MODEL := Mi A2
-PRODUCT_BRAND := Xiaomi
-PRODUCT_MANUFACTURER := Xiaomi
