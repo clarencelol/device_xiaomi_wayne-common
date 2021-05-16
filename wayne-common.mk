@@ -26,7 +26,7 @@
 DEVICE_PATH := device/xiaomi/wayne-common
 
 # APEX
-ENABLE_APEX := true
+ENABLE_APEX := false
 
 
 # Audio
