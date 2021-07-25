@@ -21,9 +21,6 @@
 # definition file).
 #
 
-# Build Fingerprint
-BUILD_FINGERPRINT := "xiaomi/wayne/wayne:8.1.0/OPM1.171019.011/V9.5.11.0.ODCCNFA:user/release-keys"
-
 # Adaptive Display
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.qcom.ad=1 \
