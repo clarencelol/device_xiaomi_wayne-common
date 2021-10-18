@@ -18,6 +18,11 @@ TARGET_SCREEN_WIDTH := 1080
 # Consumerir
 BOARD_HAVE_IR := true
 
+# Cgroup and task_profiles
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/cgroups.json:$(TARGET_COPY_OUT_VENDOR)/etc/cgroups.json \
+    $(DEVICE_PATH)/configs/task_profiles.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json
+
 # Device identifier
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
