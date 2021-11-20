@@ -1,0 +1,2 @@
+# HVDCP
+genfscon sysfs /devices/soc/c176000.i2c/i2c-2/2-001d/name   u:object_r:vendor_sysfs_hvdcp:s0

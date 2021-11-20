@@ -1,0 +1,4 @@
+# Camera
+persist.vendor.bokeh.           u:object_r:vendor_camera_prop:s0
+persist.vendor.imx376_ofilm.    u:object_r:vendor_camera_prop:s0
+persist.vendor.imx376_sunny.    u:object_r:vendor_camera_prop:s0
