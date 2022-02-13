@@ -10,6 +10,9 @@ include device/xiaomi/sdm660-common/BoardConfigCommon.mk
 
 WAYNE_COMMON_PATH := device/xiaomi/wayne-common
 
+# Camera
+BOARD_QTI_CAMERA_32BIT_ONLY := true
+
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
 
