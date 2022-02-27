@@ -4,17 +4,6 @@ vendor/firmware/tas2557_uCDSP.bin
 vendor/firmware/tfa98xx.cnt
 vendor/firmware/voice_amodel.bin
 
-# Audio ACDB
-vendor/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb
-vendor/etc/acdbdata/MTP/MTP_General_cal.acdb
-vendor/etc/acdbdata/MTP/MTP_Global_cal.acdb
-vendor/etc/acdbdata/MTP/MTP_Handset_cal.acdb
-vendor/etc/acdbdata/MTP/MTP_Headset_cal.acdb
-vendor/etc/acdbdata/MTP/MTP_Hdmi_cal.acdb
-vendor/etc/acdbdata/MTP/MTP_Speaker_cal.acdb
-vendor/etc/acdbdata/MTP/MTP_workspaceFile.qwsp
-vendor/etc/acdbdata/adsp_avs_config.acdb
-
 # Camera - from LA.UM.9.11.r1-03900-NICOBAR.0
 vendor/lib/lib_algo_svhdr.so|effdf0540edf47574eeaae69f131ac632dec25cb
 vendor/lib/libmmcamera2_frame_algorithm.so|ab8bfcf4eb6c8448342f2328c7a9aab2ed6d4f9f
