@@ -355,7 +355,7 @@
     <ctl name="ADC1 Volume" value="8" />
     <ctl name="ADC2 Volume" value="8" />
     <ctl name="ADC3 Volume" value="8" />
-    <ctl name="DEC1 Volume" value="84" />
+    <ctl name="DEC1 Volume" value="92" />
     <ctl name="DEC2 Volume" value="84" />
     <ctl name="DEC3 Volume" value="84" />
     <ctl name="DEC4 Volume" value="84" />
@@ -496,6 +496,7 @@
     <path name="deep-buffer-playback">
         <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia1" value="1" />
     </path>
+
     <path name="deep-buffer-playback speaker">
         <ctl name="PRI_MI2S_RX Audio Mixer MultiMedia1" value="1" />
     </path>
@@ -625,7 +626,6 @@
         <path name="low-latency-playback bt-sco" />
     </path>
 
-    <!-- lct add for whatsapp call ring -->    
     <path name="low-latency-playback speaker-and-bt-sco-wb"> 
 	    <path name="low-latency-playback bt-sco-wb" /> 
 	    <path name="low-latency-playback speaker" /> 
@@ -699,6 +699,7 @@
     <path name="audio-ull-playback">
         <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia8" value="1" />
     </path>
+
     <path name="audio-ull-playback speaker">
         <ctl name="PRI_MI2S_RX Audio Mixer MultiMedia8" value="1" />
     </path>
@@ -919,7 +920,7 @@
     </path>
 
     <path name="compress-offload-playback2 speaker-safe">
-        <path name="compress-offload-playback2" />
+        <ctl name="PRI_MI2S_RX Audio Mixer MultiMedia7" value="1" />
     </path>
 
     <path name="compress-offload-playback2 hdmi">
@@ -1021,7 +1022,7 @@
     </path>
 
     <path name="compress-offload-playback3 speaker-safe">
-        <path name="compress-offload-playback3" />
+        <ctl name="PRI_MI2S_RX Audio Mixer MultiMedia10" value="1" />
     </path>
 
     <path name="compress-offload-playback3 hdmi">
@@ -1123,7 +1124,7 @@
     </path>
 
     <path name="compress-offload-playback4 speaker-safe">
-        <path name="compress-offload-playback4" />
+        <ctl name="PRI_MI2S_RX Audio Mixer MultiMedia11" value="1" />
     </path>
 
     <path name="compress-offload-playback4 hdmi">
@@ -1225,7 +1226,7 @@
     </path>
 
     <path name="compress-offload-playback5 speaker-safe">
-        <path name="compress-offload-playback5" />
+        <ctl name="PRI_MI2S_RX Audio Mixer MultiMedia12" value="1" />
     </path>
 
     <path name="compress-offload-playback5 hdmi">
@@ -1327,7 +1328,7 @@
     </path>
 
     <path name="compress-offload-playback6 speaker-safe">
-        <path name="compress-offload-playback6" />
+        <ctl name="PRI_MI2S_RX Audio Mixer MultiMedia13" value="1" />
     </path>
 
     <path name="compress-offload-playback6 hdmi">
@@ -1429,7 +1430,7 @@
     </path>
 
     <path name="compress-offload-playback7 speaker-safe">
-        <path name="compress-offload-playback7" />
+        <ctl name="PRI_MI2S_RX Audio Mixer MultiMedia14" value="1" />
     </path>
 
     <path name="compress-offload-playback7 hdmi">
@@ -1531,7 +1532,7 @@
     </path>
 
     <path name="compress-offload-playback8 speaker-safe">
-        <path name="compress-offload-playback8" />
+        <ctl name="PRI_MI2S_RX Audio Mixer MultiMedia15" value="1" />
     </path>
 
     <path name="compress-offload-playback8 hdmi">
@@ -1633,7 +1634,7 @@
     </path>
 
     <path name="compress-offload-playback9 speaker-safe">
-        <path name="compress-offload-playback9" />
+        <ctl name="PRI_MI2S_RX Audio Mixer MultiMedia16" value="1" />
     </path>
 
     <path name="compress-offload-playback9 hdmi">
@@ -2326,7 +2327,7 @@
     <path name="handset">
         <ctl name="RX1 MIX1 INP1" value="RX1" />
         <ctl name="RDAC2 MUX" value="RX1" />
-        <ctl name="RX1 Digital Volume" value="92" />
+        <ctl name="RX1 Digital Volume" value="95" />
         <ctl name="EAR PA Gain" value="POS_6_DB" />
         <ctl name="EAR_S" value="Switch" />
     </path>
