@@ -44,6 +44,10 @@ BOARD_HAVE_IR := true
 # Device identifier
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
+# Display Device Config
+PRODUCT_COPY_FILES += \
+    $(WAYNE_COMMON_PATH)/configs/displayconfig/display_id_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_0.xml
+
 # EAS POWERHINT VARIANT
 EAS_POWERHINT_VARIANT := sdm660
 
