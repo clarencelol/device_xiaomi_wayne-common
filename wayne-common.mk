@@ -62,10 +62,6 @@ $(call inherit-product, device/xiaomi/sdm660-common/sdm660.mk)
 PRODUCT_PACKAGES += \
     init.device.rc
 
-# Media
-PRODUCT_COPY_FILES += \
-    $(WAYNE_COMMON_PATH)/configs/media/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
-
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(WAYNE_COMMON_PATH)/overlay \
