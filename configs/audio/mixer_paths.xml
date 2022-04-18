@@ -543,6 +543,7 @@
 
     <path name="deep-buffer-playback speaker">
         <ctl name="PRI_MI2S_RX Audio Mixer MultiMedia1" value="1" />
+        <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia1" value="1" />
     </path>
 
     <path name="deep-buffer-playback speaker-protected">
@@ -642,6 +643,7 @@
 
     <path name="low-latency-playback speaker">
         <ctl name="PRI_MI2S_RX Audio Mixer MultiMedia5" value="1" />
+        <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia5" value="1" />
     </path>
 
     <path name="low-latency-playback speaker-protected">
@@ -851,6 +853,7 @@
 
     <path name="compress-offload-playback speaker">
         <ctl name="PRI_MI2S_RX Audio Mixer MultiMedia4" value="1" />
+        <ctl name="INT0_MI2S_RX Audio Mixer MultiMedia4" value="1" />
     </path>
 
     <path name="compress-offload-playback speaker-protected">
@@ -2191,16 +2194,13 @@
 
     <!-- These are actual sound device specific mixer settings -->
 
-    <!-- Elclark -->
+    <!-- Stereo Mod -->
     <path name="stereomod">
         <ctl name="INT0_MI2S_RX Channels" value="Two" />
         <ctl name="RX1 MIX1 INP1" value="RX1" />
         <ctl name="RDAC2 MUX" value="RX1" />
-        <ctl name="RX2 Digital Volume" value="94" />
         <ctl name="EAR PA Gain" value="POS_6_DB" />
         <ctl name="EAR_S" value="Switch" />
-        <!--ctl name="HPHL" value="19" />
-        <ctl name="HPHR" value="15" /-->
     </path>
 
     <path name="adc1">
@@ -2384,7 +2384,6 @@
     </path>
 
     <path name="handset">
-    	<ctl name="INT0_MI2S_RX SampleRate" value="KHZ_96" />
         <ctl name="RX1 MIX1 INP1" value="RX1" />
         <ctl name="RDAC2 MUX" value="RX1" />
         <ctl name="RX1 Digital Volume" value="95" />
@@ -2569,6 +2568,8 @@
 
     <path name="voice-headphones">
         <path name="headphones" />
+        <ctl name="RX1 Digital Volume" value="84" />
+        <ctl name="RX2 Digital Volume" value="84" />
     </path>
 
     <path name="voice-line">
@@ -2964,7 +2965,7 @@
     </path>
 
     <path name="speaker-safe-and-bt-a2dp">
-        <path name="speaker-safe" />
+        <path name="speakersafe" />
         <path name="bt-a2dp" />
     </path>
 
@@ -3213,10 +3214,6 @@
 
     <path name="hifi-playback usb-headphones">
         <ctl name="USB_AUDIO_RX Audio Mixer MultiMedia2" value="1" />
-    </path>
-
-    <path name="hifi-record">
-        <ctl name="MultiMedia2 Mixer INT3_MI2S_TX" value="1" />
     </path>
 
     <path name="hifi-record usb-headset-mic">
