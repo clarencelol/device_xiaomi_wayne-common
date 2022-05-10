@@ -43,6 +43,7 @@ VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 WLAN_MAC_SYMLINK := true
 
 # Properties
+TARGET_SYSTEM_PROP += $(WAYNE_COMMON_PATH)/system.prop
 TARGET_VENDOR_PROP += $(WAYNE_COMMON_PATH)/vendor.prop
 
 # Inherit the proprietary files
