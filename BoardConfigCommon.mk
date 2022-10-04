@@ -31,7 +31,7 @@ TARGET_SCREEN_DENSITY := 440
 DEVICE_MANIFEST_FILE += $(WAYNE_COMMON_PATH)/manifest.xml
 
 # Kernel
-TARGET_KERNEL_CONFIG := wayne_defconfig
+TARGET_KERNEL_CONFIG := vendor/wayne-oss-perf_defconfig
 
 # Selinux
 BOARD_VENDOR_SEPOLICY_DIRS += $(WAYNE_COMMON_PATH)/sepolicy/vendor
